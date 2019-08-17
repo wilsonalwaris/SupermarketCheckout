@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Checkout.Services
+﻿namespace Checkout.Services
 {
     public class Class1
     {
