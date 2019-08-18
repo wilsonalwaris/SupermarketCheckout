@@ -1,11 +1,26 @@
-﻿using NUnit.Framework;
+﻿//-----------------------------------------------------------------------
+// <copyright file="CheckoutHelperTests.cs" company="Wtrader Ltd.">
+//     Copyright (c) Wtrader Ltd.. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 
 namespace Checkout.Services.Tests
 {
-    public partial class CheckoutHelperTests
-    {
-        protected ICheckoutHelper checkoutHelper;
+    using NUnit.Framework;
 
+    /// <summary>
+    /// Defines the <see cref="CheckoutHelperTests" />
+    /// </summary>
+    internal partial class CheckoutHelperTests
+    {
+        /// <summary>
+        /// Defines the checkoutHelper
+        /// </summary>
+        private ICheckoutHelper checkoutHelper;
+
+        /// <summary>
+        /// The Setup
+        /// </summary>
         [SetUp]
         public void Setup()
         {
