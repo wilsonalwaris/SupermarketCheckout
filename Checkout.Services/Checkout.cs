@@ -7,6 +7,7 @@
 namespace Checkout.Services
 {
     using Checkout.Types;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Defines the <see cref="CheckOut" />
@@ -30,11 +31,12 @@ namespace Checkout.Services
         /// <summary>
         /// The Scan
         /// </summary>
-        /// <param name="item">The item<see cref="Item"/></param>
+        /// <param name="item">The item<see cref="string"/></param>
         /// <returns>The <see cref="Item"/></returns>
-        public Item Scan(Item item)
+        public List<Item> Scan(string item)
         {
-            return null;
+            var items = this.checkoutHelper.GetPopulatedItemsFromString(item);
+            return this.checkoutHelper.GetPricesForItems(items);
         }
     }
 }

@@ -15,6 +15,11 @@ namespace Checkout.Services.Tests
     public partial class CheckoutTests
     {
         /// <summary>
+        /// Defines the checkoutWithMockedDependencies
+        /// </summary>
+        private ICheckOut checkoutWithMockedDependencies;
+
+        /// <summary>
         /// Defines the checkout
         /// </summary>
         private ICheckOut checkout;
@@ -31,8 +36,8 @@ namespace Checkout.Services.Tests
         public void Setup()
         {
             this.checkoutHelper = new Mock<ICheckoutHelper>();
-            this.checkout = new CheckOut(this.checkoutHelper.Object);
+            this.checkoutWithMockedDependencies = new CheckOut(this.checkoutHelper.Object);
+            this.checkout = new CheckOut(new CheckoutHelper());
         }
     }
 }
-

@@ -7,6 +7,7 @@
 namespace Checkout.Services
 {
     using Checkout.Types;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Defines the <see cref="ICheckOut" />
@@ -16,8 +17,8 @@ namespace Checkout.Services
         /// <summary>
         /// The Scan
         /// </summary>
-        /// <param name="item">The item<see cref="Item"/></param>
-        /// <returns>The <see cref="Item"/></returns>
-        Item Scan(Item item);
+        /// <param name="item">The item<see cref="string"/></param>
+        /// <returns>The <see cref="List{Item}"/></returns>
+        List<Item> Scan(string item);
     }
 }
