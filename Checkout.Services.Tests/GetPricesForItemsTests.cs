@@ -25,7 +25,7 @@ namespace Checkout.Services.Tests
             /// The GreenPath_Valid_Items_List_Provided
             /// </summary>
             [Test]
-            public void GreenPath_Valid_Items_List_Provided()
+            public void GreenPath_when_valid_items_Provided()
             {
                 // arrange
                 var items = new List<Item> {
@@ -37,6 +37,22 @@ namespace Checkout.Services.Tests
 
                 // assert
                 Assert.IsTrue(pricePopulatedItems.FirstOrDefault().Price == 0.50m);
+            }
+
+            /// <summary>
+            /// The RedPath_empty_items_sent
+            /// </summary>
+            [Test]
+            public void RedPath_when_empty_items_sent()
+            {
+                // arrange
+                var items = new List<Item>();
+
+                // act
+                var pricePopulatedItems = this.checkoutHelper.GetPricesForItems(items);
+
+                // assert
+                Assert.IsTrue(pricePopulatedItems == null);
             }
         }
     }
