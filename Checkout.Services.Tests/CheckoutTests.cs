@@ -1,22 +1,28 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="CheckoutHelperTests.cs" company="Wtrader Ltd.">
+// <copyright file="CheckoutTests.cs" company="Wtrader Ltd.">
 //     Copyright (c) Wtrader Ltd.. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
 
 namespace Checkout.Services.Tests
 {
+    using Moq;
     using NUnit.Framework;
 
     /// <summary>
-    /// Defines the <see cref="CheckoutHelperTests" />
+    /// Defines the <see cref="CheckoutTests" />
     /// </summary>
-    public partial class CheckoutHelperTests
+    public partial class CheckoutTests
     {
+        /// <summary>
+        /// Defines the checkout
+        /// </summary>
+        private ICheckOut checkout;
+
         /// <summary>
         /// Defines the checkoutHelper
         /// </summary>
-        private ICheckoutHelper checkoutHelper;
+        private Mock<ICheckoutHelper> checkoutHelper;
 
         /// <summary>
         /// The Setup
@@ -24,7 +30,9 @@ namespace Checkout.Services.Tests
         [SetUp]
         public void Setup()
         {
-            this.checkoutHelper = new CheckoutHelper();
+            this.checkoutHelper = new Mock<ICheckoutHelper>();
+            this.checkout = new CheckOut(this.checkoutHelper.Object);
         }
     }
 }
+

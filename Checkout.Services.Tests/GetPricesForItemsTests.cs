@@ -14,7 +14,7 @@ namespace Checkout.Services.Tests
     /// <summary>
     /// Defines the <see cref="CheckoutHelperTests" />
     /// </summary>
-    internal partial class CheckoutHelperTests
+    public partial class CheckoutHelperTests
     {
         /// <summary>
         /// Defines the <see cref="GetPricesForItemsTest" />

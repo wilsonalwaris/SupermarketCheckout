@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29209.62
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkout.Services", "Checkout.Services\Checkout.Services.csproj", "{5349DF5C-D974-4719-8AAB-4BA3104A97B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkout.Types", "Checkout.Types\Checkout.Types.csproj", "{1D482CAF-C6FE-497B-AD7B-800B844F048F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkout.Types", "Checkout.Types\Checkout.Types.csproj", "{1D482CAF-C6FE-497B-AD7B-800B844F048F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Checkout.Services.Tests", "Checkout.Services.Tests\Checkout.Services.Tests.csproj", "{02CA8883-4241-41FF-89AE-F1EC2F644C0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Checkout.Services.Tests", "Checkout.Services.Tests\Checkout.Services.Tests.csproj", "{02CA8883-4241-41FF-89AE-F1EC2F644C0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
