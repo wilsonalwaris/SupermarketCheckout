@@ -29,6 +29,16 @@ namespace Checkout.Services
         }
 
         /// <summary>
+        /// The GetTotalPrice
+        /// </summary>
+        /// <param name="pricePopulatedItems">The pricePopulatedItems<see cref="List{Item}"/></param>
+        /// <returns>The <see cref="decimal"/> the total price</returns>
+        public decimal GetTotalPrice(List<Item> pricePopulatedItems)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        /// <summary>
         /// The Scan
         /// </summary>
         /// <param name="item">The item<see cref="string"/></param>
