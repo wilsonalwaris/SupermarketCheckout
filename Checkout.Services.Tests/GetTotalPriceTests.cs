@@ -22,12 +22,14 @@ namespace Checkout.Services.Tests
             /// The GetTotalPriceTest
             /// </summary>
             /// <param name="items">The items<see cref="string"/></param>
-            [TestCase("A99,B15")]
-            public void GetTotalPriceTest(string items)
+            /// <param name="expectedPrice">The expectedPrice<see cref="string"/></param>
+            [TestCase("A99,B15", "0.80")]
+            [TestCase("A99,A99,A99,B15", "1.60")]
+            public void GetTotalPriceTest(string items, string expectedPrice)
             {
                 // arrange 
                 var pricePopulatedItems = this.checkout.Scan(items);
-                var expectedTotalPrice = 0.80m;
+                var expectedTotalPrice = decimal.Parse(expectedPrice);
 
                 // act
                 var totalPrice = this.checkout.GetTotalPrice(pricePopulatedItems);
