@@ -35,7 +35,13 @@ namespace Checkout.Services
         /// <returns>The <see cref="decimal"/> the total price</returns>
         public decimal GetTotalPrice(List<Item> pricePopulatedItems)
         {
-            throw new System.NotImplementedException();
+            var totalPrice = 0.0m;
+            foreach (var item in pricePopulatedItems)
+            {
+                totalPrice += item.Price;
+            }
+
+            return totalPrice;
         }
 
         /// <summary>
