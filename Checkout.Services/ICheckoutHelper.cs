@@ -27,5 +27,19 @@ namespace Checkout.Services
         /// <param name="items">The items<see cref="List{Item}"/></param>
         /// <returns>The <see cref="List{Item}"/></returns>
         List<Item> GetPricesForItems(List<Item> items);
+
+        /// <summary>
+        /// The GetBasket
+        /// </summary>
+        /// <param name="items">The items<see cref="List{Item}"/></param>
+        /// <returns>The <see cref="Dictionary{string, int}"/></returns>
+        Dictionary<string, int> GetBasket(List<Item> items);
+
+        /// <summary>
+        /// The GetPrice
+        /// </summary>
+        /// <param name="item">The item<see cref="Item"/></param>
+        /// <returns>The <see cref="Item"/></returns>
+        Item GetItemDetails(string sku);
     }
 }

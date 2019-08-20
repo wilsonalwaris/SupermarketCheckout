@@ -58,6 +58,26 @@ namespace Checkout.Services
         }
 
         /// <summary>
+        /// The GetBasket
+        /// </summary>
+        /// <param name="pricePopulatedItems">The pricePopulatedItems<see cref="List{Item}"/></param>
+        /// <returns>The <see cref="Dictionary{string, int}"/></returns>
+        public Dictionary<string, int> GetBasket(List<Item> pricePopulatedItems)
+        {
+            var basket = (from item in pricePopulatedItems
+                          group item by item.Sku
+                         into groupedItems
+                          select groupedItems).ToDictionary(gi => gi.Key, gi => gi.Count());
+
+            return basket;
+        }
+
+        public Item GetItemDetails(string sku)
+        {
+            return this.GetPriceList().First(i => string.Equals(i.Sku, sku));
+        }
+
+        /// <summary>
         /// The GetPrice
         /// </summary>
         /// <param name="item">The item<see cref="Item"/></param>
@@ -65,7 +85,7 @@ namespace Checkout.Services
         private Item GetPrice(Item item)
         {
             List<Item> priceList = this.GetPriceList();
-            return priceList.FirstOrDefault(i => string.Equals(i.Sku, item.Sku));
+            return priceList.First(i => string.Equals(i.Sku, item.Sku));
         }
 
         /// <summary>
@@ -75,10 +95,11 @@ namespace Checkout.Services
         private List<Item> GetPriceList()
         {
             return new List<Item>() {
-                new Item() { Sku = "A99", Price = 0.50m},
-                new Item() { Sku = "B15", Price = 0.30m},
+                new Item() { Sku = "A99", Price = 0.50m, OfferPrice = 1.30m, OfferQuantity = 3},
+                new Item() { Sku = "B15", Price = 0.30m, OfferPrice = 0.45m, OfferQuantity = 2},
                 new Item() { Sku = "C40", Price = 0.60m},
             };
         }
+
     }
 }
